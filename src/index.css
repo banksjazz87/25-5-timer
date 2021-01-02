@@ -182,9 +182,7 @@ button:active {
     grid-template-rows: auto auto;
     grid-template-areas: "top-time top-time top-time" "break-con . session-con";
     grid-row-gap: 2em;
-    grid-column-gap: 2em;
+    grid-column-gap: 1em;
     border-radius: 10%;
     padding: 1em;
-    margin-right: 1em;
-    margin-left: 1em;
 }
