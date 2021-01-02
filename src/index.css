@@ -1,13 +1,190 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    font-family: 'Courier New', cambria;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, rgb(56, 55, 55), rgb(31, 30, 30), rgb(56, 55, 55));
+    box-shadow: .25em .5em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#header {
+    color: white;
+    text-shadow: .05em .05em black;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+button {
+    outline: none;
+}
+
+button:hover {
+    border: solid;
+    border-width: .1em;
+}
+
+button:active {
+    border: solid;
+    border-width: .1em;
+    transform: translateY(.2em);
+}
+
+#timer-label {
+    grid-area: timer-lbl;
+    font-size: 2em;
+}
+
+#time-left {
+    grid-area: time-left;
+}
+
+#start_stop {
+    grid-area: start;
+    border: none;
+    box-shadow: .15em .25em black;
+    font-size: 1.15em;
+    background-color: white;
+}
+
+#start_stop:hover {
+    border: solid;
+    border-width: .1em;
+}
+
+#start_stop:active {
+    border: solid;
+    border-width: .1em;
+    transform: translateY(.2em);
+}
+
+#reset {
+    grid-area: reset;
+    border: none;
+    box-shadow: .15em .25em black;
+    font-size: 1.15em;
+    background-color: white;
+}
+
+#reset:hover {
+    border: solid;
+    border-width: .05em;
+}
+
+#reset:active {
+    border: solid;
+    border-width: .1em;
+    transform: translateY(.2em);
+}
+
+#break-label {
+    grid-area: break-lbl;
+    font-size: 1.35em;
+    margin-top: 0;
+}
+
+#break-length {
+    grid-area: break-length;
+}
+
+#break-increment {
+    grid-area: break-inc;
+}
+
+#break-decrement {
+    grid-area: break-dec;
+}
+
+#session-label {
+    grid-area: session-lbl;
+    font-size: 1.35em;
+    margin-top: 0;
+}
+
+#session-length {
+    grid-area: session-length;
+}
+
+#session-increment {
+    grid-area: session-inc;
+}
+
+#session-decrement {
+    grid-area: session-dec;
+}
+
+#top-time {
+    grid-area: top-time;
+}
+
+#break-content {
+    grid-area: break-con;
+}
+
+#session-content {
+    grid-area: session-con;
+}
+
+.change-time {
+    border-radius: 85%;
+    border: none;
+    background-color: rgb(243, 240, 240);
+    box-shadow: .15em .25em black;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.time {
+    border-radius: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#top-time {
+    display: grid;
+    grid-template-rows: 3em 3em 3em 1em;
+    grid-template-columns: 3em 3em 3em 3em 3em;
+    grid-template-areas: ". timer-lbl timer-lbl timer-lbl ." ". time-left time-left time-left. " "start start . reset reset" ". . . . .";
+    border-radius: 100%;
+    background-image: linear-gradient(to top right, rgb(80, 34, 133), rgb(158, 119, 202));
+    justify-content: center;
+    grid-row-gap: 2em;
+    padding: 2em;
+}
+
+#break-content {
+    display: grid;
+    grid-template-columns: 3em 3em 3em;
+    grid-template-rows: 3em 3em 3em;
+    grid-template-areas: "break-lbl break-lbl break-lbl" "break-length break-length break-length" "break-inc . break-dec";
+    background-image: linear-gradient(to top right, rgb(185, 92, 185), rgb(165, 103, 165), rgb(185, 92, 185));
+    border-radius: 15%;
+    padding: .5em;
+}
+
+#session-content {
+    display: grid;
+    grid-template-columns: 3em 3em 3em;
+    grid-template-rows: 3em 3em 3em;
+    grid-template-areas: "session-lbl session-lbl session-lbl" "session-length session-length session-length" "session-inc . session-dec";
+    background-image: linear-gradient(to top right, rgb(185, 92, 185), rgb(165, 103, 165), rgb(185, 92, 185));
+    border-radius: 15%;
+    padding: .5em;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "top-time top-time top-time" "break-con . session-con";
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;
+    border-radius: 10%;
+    padding: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
 }
