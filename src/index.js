@@ -67,6 +67,7 @@ function resetBeep(){
     x.currentTime = 0;
 }
 
+
 class Header extends React.Component{
     constructor(props){
         super(props);
@@ -386,6 +387,10 @@ class Application extends React.Component {
     }
 
     startPauseOnClick(){ 
+        let paused = document.getElementById("beep").paused;
+        let currentAudio = document.getElementById("beep").currentTime;
+        let audioEnded = document.getElementById("beep").ended;
+
          if(this.state.timerOn){
 
             this.setState({
@@ -393,9 +398,15 @@ class Application extends React.Component {
                 operation: "Start"   
             });
             pauseBeep();
-        }else{ 
+        }else if(paused === true && audioEnded === false && currentAudio > 0){
             this.setState({
                 timerOn: true,
+                operation: "Pause"
+            });
+            playBeep();
+        }else{
+            this.setState({
+                timerOn: true, 
                 operation: "Pause"
             })
         }
