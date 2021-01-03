@@ -225,7 +225,7 @@ class Application extends React.Component {
     timerStart(){
        if(this.state.timerOn && this.state.totalSeconds === ""){
 
-        let newTimeInSeconds = currentSeconds(this.state.sessionTime);
+        let newTimeInSeconds = currentSeconds(this.state.sessionTime) - 1;
         let newSessionMinutes = minutes(newTimeInSeconds);
         let newSessionSeconds = seconds(newTimeInSeconds);
 
@@ -409,17 +409,26 @@ class Application extends React.Component {
                 timerOn: true, 
                 operation: "Pause"
             })
+            resetBeep();
         }
     }
 
     render(){
         let currentTotal = this.state.totalSeconds;
+        let timeRunning = this.state.timerOn;
+        /*let paused = document.getElementById("beep").paused;
+        let currentAudio = document.getElementById("beep").currentTime;
+        let audioEnded = document.getElementById("beep").ended;*/
+
 
         function playSound(){
-            if(currentTotal === -1){
+            if(currentTotal === -1 && timeRunning){
                 playBeep();
-            }
+           /* }else if(timeRunning === false && currentAudio > 0 && audioEnded === false){
+                pauseBeep();
+            }else if()*/
         }
+    }
             playSound();
 
         return(
@@ -494,7 +503,7 @@ class Application extends React.Component {
         </div>
         )
     }
-}
+    }
 ReactDOM.render( 
     <Application / > ,
     document.getElementById('root')
