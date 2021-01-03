@@ -416,17 +416,10 @@ class Application extends React.Component {
     render(){
         let currentTotal = this.state.totalSeconds;
         let timeRunning = this.state.timerOn;
-        /*let paused = document.getElementById("beep").paused;
-        let currentAudio = document.getElementById("beep").currentTime;
-        let audioEnded = document.getElementById("beep").ended;*/
-
-
+       
         function playSound(){
             if(currentTotal === -1 && timeRunning){
                 playBeep();
-           /* }else if(timeRunning === false && currentAudio > 0 && audioEnded === false){
-                pauseBeep();
-            }else if()*/
         }
     }
             playSound();
