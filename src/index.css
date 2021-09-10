@@ -15,7 +15,7 @@ body {
     color: white;
     text-shadow: .05em .05em black;
     font-size: 2.5em;
-    margin-top: 0;
+    margin-top: .5em;
 }
 
 button {
@@ -184,5 +184,29 @@ button:active {
     grid-row-gap: 2em;
     grid-column-gap: 1em;
     border-radius: 10%;
-    padding: 1em;
+    padding: 1.5em;
+    border-width: .25em;
+    border-style: solid;
+    border-color: rgb(133, 92, 180);
+    box-shadow: 1px 3px blueviolet;
+    background-color: rgb(37, 37, 37);
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        font-size: 12px;
+    }
+    #header {
+        margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    body {
+        font-size: 10px;
+    }
+    #header {
+        margin-top: 2em;
+    }
 }
